@@ -74,7 +74,7 @@ Lưu ý model và các file sau khi clone phải ở cùng một thư mục.
 Nén các file ... vào lab2.zip.
 Mở Terminal tại thư mục chứa lab2.zip.
 
-5. Đưa Dự án lên Server:
+5. **Đưa Dự án lên Server:**
 ```sh
 scp lab2.zip server_user@server_ip:/home/server_user/your_folder/
 ```
