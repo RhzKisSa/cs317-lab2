@@ -56,16 +56,35 @@
 ## Hướng dẫn cài đặt môi trường và cách chạy code
 Download và đăng nhập vào Docker Desktop.
 Mở Terminal tại thư mục chỉ định.
-**Chuẩn bị trên Server:**
+# **Chuẩn bị trên Server:**
 1. Cài đặt Docker: Server của bạn cần được cài đặt Docker Engine.
 2. Cài đặt Docker Compose: Docker Compose cũng cần được cài đặt trên server.
 3. Truy cập Server:Truy cập vào server thông qua SSH hoặc một phương thức khác.
-1. **Clone repository**
+4. Chuẩn bị file
+*Clone repository*
 ```sh
 git clone https://github.com/RhzKisSa/cs317-lab2.git
 ```
-2. **Download pre-trained model**
+*Download pre-trained model:*
 Download pre-trained model at ([here](https://drive.google.com/file/d/1TWeVaNwtrFZxZWeYka_jda4eQgUXxxXm/view?usp=sharing))
+Lưu ý model và các file sau khi clone phải ở cùng một thư mục.
+Nén các file ... vào lab2.zip.
+Mở Terminal tại thư mục chứa lab2.zip
+5. Đưa Dự án lên Server:
+```sh
+scp lab2.zip server_user@server_ip:/home/server_user/your_folder/
+```
+- Cài đặt unzip (nếu chưa có):
+```sh
+sudo apt update
+```
+```sh
+sudo apt install unzip -y
+```
+- Giải nén file lab2.zip:
+```sh
+unzip lab2.zip
+```
 - Linux :
 ```sh
 $ sudo apt-get update
