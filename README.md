@@ -52,18 +52,18 @@
 * **Academic Year:** HK2 (2024 - 2025).
 * **Lecturer**: Th.S Đỗ Văn Tiến, Lê Trần Trọng Khiêm
 
-# Thực hành Lab02
+## Thực hành Lab02
 ## Hướng dẫn cài đặt môi trường và cách chạy code
 Download và đăng nhập vào Docker Desktop.
 Mở Terminal tại thư mục chỉ định.
 # **Chuẩn bị trên Server:**
-1. Cài đặt Docker: Server của bạn cần được cài đặt Docker Engine.
+1. **Cài đặt Docker:** Server cần được cài đặt Docker Engine.
 
-2. Cài đặt Docker Compose: Docker Compose cũng cần được cài đặt trên server.
+2. **Cài đặt Docker Compose:** Docker Compose cũng cần được cài đặt trên server.
 
-3. Truy cập Server:Truy cập vào server thông qua SSH hoặc một phương thức khác.
+3. **Truy cập Server:** Truy cập vào server thông qua SSH hoặc một phương thức khác.
 
-4. Chuẩn bị file
+4. **Chuẩn bị file**
 *Clone repository*
 ```sh
 git clone https://github.com/RhzKisSa/cs317-lab2.git
@@ -89,7 +89,7 @@ sudo apt install unzip -y
 ```sh
 unzip lab2.zip
 ```
-*Đưa các file vào một thư mục để dễ dàng quản lý*
+**Đưa các file vào một thư mục để dễ dàng quản lý**
 - Tạo thư mục chứa file
 ```sh
 mkdir your_folder_name
@@ -107,12 +107,12 @@ mv requirements.txt your_folder_name/
 ```sh
 cd your_folder_name
 ```
-6. Chạy Docker Compose
+6. **Chạy Docker Compose**
 Tại thư mục chưa file *docker-compose.yml* chạy với lệnh:
 ```sh
 docker-compose up --build -d
 ```
-7. Sử dụng phương thức predict để dự đoán
+7. **Sử dụng phương thức predict để dự đoán**
 Mở WSL và gõ lệnh
 ```sh
 curl -X POST -F "file=@/duong_dan_den_file_anh_cua_ban/ten_file_anh.jpg" http://192.168.28.38:8000/predict/
