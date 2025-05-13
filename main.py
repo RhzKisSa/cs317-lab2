@@ -2,7 +2,7 @@ import io
 import torch
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from PIL import Image
-import uvicorn
+import uvicorn 
 from contextlib import asynccontextmanager 
 
 from my_model_definition import ImageClassifier, transform_image_for_prediction, device
@@ -25,21 +25,19 @@ async def lifespan(app: FastAPI):
         print("Mô hình đã được tải thành công và sẵn sàng cho dự đoán.")
     except FileNotFoundError:
         app.state.model = None 
-        print(f"Lỗi: Không tìm thấy file mô hình tại '{MODEL_PATH}'. API sẽ không hoạt động chính xác.")
+        print(f"Lỗi: Không tìm thấy file mô hình tại '{MODEL_PATH}'")
     except Exception as e:
-        app.state.model = None
-        print(f"Lỗi nghiêm trọng khi tải mô hình: {e}")
+        app.state.model = None 
+        print(f"Lỗi khi tải mô hình: {e}")
     
-    yield
+    yield 
 
     print("Ứng dụng đang tắt...")
     if hasattr(app.state, 'model') and app.state.model is not None:
         del app.state.model 
         print("Model đã được dọn dẹp.")
 
-
 app = FastAPI(title="Image Classification API", version="1.0.0", lifespan=lifespan)
-
 
 @app.get("/", summary="Endpoint gốc", description="Trả về thông điệp chào mừng.")
 def read_root():
@@ -72,7 +70,7 @@ async def predict_image(file: UploadFile = File(..., description="File ảnh c�
         probabilities = torch.softmax(output_logits[0], dim=0)
         predicted_score, predicted_idx = torch.max(probabilities, 0)
 
-        class_names = {0: "Class 0", 1: "Class 1"}
+        class_names = {0: "Lớp 0", 1: "Lớp 1"}
         predicted_class_name = class_names.get(predicted_idx.item(), "Không xác định")
 
         return {
