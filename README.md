@@ -54,10 +54,16 @@
 
 # Thực hành Lab02
 ## Hướng dẫn cài đặt môi trường và cách chạy code
-
+Download và đăng nhập vào Docker Desktop.
+Mở Terminal tại thư mục chỉ định.
+**Chuẩn bị trên Server:**
+1. Cài đặt Docker: Server của bạn cần được cài đặt Docker Engine.
+2. Cài đặt Docker Compose: Docker Compose cũng cần được cài đặt trên server.
+3. Truy cập Server:Truy cập vào server thông qua SSH hoặc một phương thức khác.
 1. **Clone repository**
 ```sh
 git clone https://github.com/RhzKisSa/cs317-lab2.git
+```
 2. **Download pre-trained model**
 Download pre-trained model at ([here](https://drive.google.com/file/d/1TWeVaNwtrFZxZWeYka_jda4eQgUXxxXm/view?usp=sharing))
 - Linux :
