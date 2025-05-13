@@ -53,10 +53,13 @@
 * **Lecturer**: Th.S Đỗ Văn Tiến, Lê Trần Trọng Khiêm
 
 # Thực hành Lab02
-## Download pre-trained model
-Download pre-trained model at ([here](https://drive.google.com/file/d/1TWeVaNwtrFZxZWeYka_jda4eQgUXxxXm/view?usp=sharing))
 ## Hướng dẫn cài đặt môi trường và cách chạy code
-1. **Install python 3.10**
+
+1. **Clone repository**
+```sh
+git clone https://github.com/RhzKisSa/cs317-lab2.git
+2. **Download pre-trained model**
+Download pre-trained model at ([here](https://drive.google.com/file/d/1TWeVaNwtrFZxZWeYka_jda4eQgUXxxXm/view?usp=sharing))
 - Linux :
 ```sh
 $ sudo apt-get update
