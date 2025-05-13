@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: my_custom_model_api:latest 
-    container_name: custom_model_api_container
+    image: lab_2_model_api:latest 
+    container_name: lab_2_model_api_container
     ports:
       - "8000:8000" 
     volumes:
