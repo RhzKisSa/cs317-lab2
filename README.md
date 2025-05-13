@@ -112,69 +112,16 @@ Tại thư mục chưa file *docker-compose.yml* chạy với lệnh:
 ```sh
 docker-compose up --build -d
 ```
-
-
-
-- Linux :
-
-
-  - Nếu không cài được python 3.10 bạn có thể thử ([Link sau](https://stackoverflow.com/questions/75131112/how-to-install-python3-10-virtual-environment-when-python3-10-venv-has-no-instal))
-- Window: có thể tải về máy ([tại đây](https://www.python.org/downloads/))
-2. **Clone git**
-- Đảm bảo đã tải git về máy ([tải tại đây](https://git-scm.com/downloads))
-- Mở Folder để lưu dữ liệu được tải về, sau đó khởi tạo git
-
-- Clone code về:
+7. Sử dụng phương thức predict để dự đoán
+Mở WSL và gõ lệnh
 ```sh
-git clone git@github.com:NguyenQuocKhanh1301/CS317_Lab01.git
+curl -X POST -F "file=@/duong_dan_den_file_anh_cua_ban/ten_file_anh.jpg" http://192.168.28.38:8000/predict/
 ```
-3. **Tạo môi trường ảo (venv or conda ...)**
-- Chuyển qua file đã clone về
+ví dụ ảnh của tôi được lưu tại đường dẫn *D:/download/test.png* thì câu lệnh là:
 ```sh
-cd your_folder_name
+curl -X POST -F "file=@/mnt/d/download/test.png" http://192.168.28.38:8000/predict/
 ```
-- Mở terminal và khởi tạo môi trường ảo với venv:
-  ```sh
-  python3.10 -m venv venv
-  ```
-- Activate môi trường ảo
-  - Linux
-  ```sh
-  source venv/bin/activate
-  ```
-  - Window
- ```sh
-.\venv\Scripts\activate
- ```
-4. **Cài đặt thư viện**
 
-Cài đặt các thư viện cần thiết:
-```sh
-pip install --upgrade pip
-```
-```sh
-pip install -r requirements.txt
-```
-5. **Mở giao diện mlflow**
-
-Sử dụng lệnh sau để ui của mlflow với
-- host: 0.0.0.0 
-- port: 5003
-```sh
-mlflow ui --host 0.0.0.0 --port 5003
-```
-6. **Run pipeline**
-
-Để chạy pipeline training sử dụng câu lệnh sau:
-```sh
-python lab01.py
-```
-7. **Load model và đánh giá**
-
-Sau khi chon được model tốt nhất thì tiến hành đánh giá:
-```ssh
-python Evaluation.py
-```
 ## Video demo:
 
 [Link Video](https://drive.google.com/file/d/1H-MN06vPVRhEIJXcoFqHuogzYoibgeR7/view?usp=sharing)
