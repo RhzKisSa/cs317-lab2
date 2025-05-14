@@ -122,6 +122,21 @@ ví dụ ảnh của tôi được lưu tại đường dẫn *D:/download/test.
 curl -X POST -F "file=@/mnt/d/download/test.png" http://192.168.28.38:8000/predict/
 ```
 
+
+8. **Push image lên Docker Hub**
+
+- Đăng nhập vào Docker Hub
+```sh
+docker login
+```
+- Tag image (Gắn thẻ cho image):
+```sh
+docker tag your_model_api:latest your_dockerhub_username/my-model-api:latest
+```
+- Push image lên Docker Hub:
+```sh
+docker push your_dockerhub_username/your-model-api:latest
+```
 ## Video demo:
 
 [Link Video](https://drive.google.com/file/d/1H-MN06vPVRhEIJXcoFqHuogzYoibgeR7/view?usp=sharing)
