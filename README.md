@@ -63,7 +63,7 @@ Mở Terminal tại thư mục chỉ định.
 
 - **Truy cập Server:** Truy cập vào server thông qua SSH hoặc một phương thức khác.
 
-2. **Chuẩn bị file**
+2. **Chuẩn bị file:**
 *Clone repository*
 ```sh
 git clone https://github.com/RhzKisSa/cs317-lab2.git
@@ -107,12 +107,12 @@ mv requirements.txt your_folder_name/
 ```sh
 cd your_folder_name
 ```
-4. **Chạy Docker Compose**
+4. **Chạy Docker Compose:**
 Tại thư mục chưa file *docker-compose.yml* chạy với lệnh:
 ```sh
 docker-compose up --build -d
 ```
-5. **Sử dụng phương thức predict để dự đoán**
+5. **Sử dụng phương thức predict để dự đoán:**
 Mở WSL và gõ lệnh
 ```sh
 curl -X POST -F "file=@/duong_dan_den_file_anh_cua_ban/ten_file_anh.jpg" http://192.168.28.38:8000/predict/
@@ -123,7 +123,7 @@ curl -X POST -F "file=@/mnt/d/download/test.png" http://192.168.28.38:8000/predi
 ```
 
 
-6. **Push image lên Docker Hub**
+6. **Push image lên Docker Hub:**
 
 - Đăng nhập vào Docker Hub
 ```sh
