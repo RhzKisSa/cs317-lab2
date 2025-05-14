@@ -56,14 +56,14 @@
 ## Hướng dẫn cài đặt môi trường và cách chạy code
 Download và đăng nhập vào Docker Desktop.
 Mở Terminal tại thư mục chỉ định.
-# **Chuẩn bị trên Server:**
-1. **Cài đặt Docker:** Server cần được cài đặt Docker Engine.
+1. **Chuẩn bị trên Server:**
+- **Cài đặt Docker:** Server cần được cài đặt Docker Engine.
 
-2. **Cài đặt Docker Compose:** Docker Compose cũng cần được cài đặt trên server.
+- **Cài đặt Docker Compose:** Docker Compose cũng cần được cài đặt trên server.
 
-3. **Truy cập Server:** Truy cập vào server thông qua SSH hoặc một phương thức khác.
+- **Truy cập Server:** Truy cập vào server thông qua SSH hoặc một phương thức khác.
 
-4. **Chuẩn bị file**
+2. **Chuẩn bị file**
 *Clone repository*
 ```sh
 git clone https://github.com/RhzKisSa/cs317-lab2.git
@@ -74,7 +74,7 @@ Lưu ý model và các file sau khi clone phải ở cùng một thư mục.
 Nén các file ... vào lab2.zip.
 Mở Terminal tại thư mục chứa lab2.zip.
 
-5. **Đưa Dự án lên Server:**
+3. **Đưa Dự án lên Server:**
 ```sh
 scp lab2.zip server_user@server_ip:/home/server_user/your_folder/
 ```
@@ -107,12 +107,12 @@ mv requirements.txt your_folder_name/
 ```sh
 cd your_folder_name
 ```
-6. **Chạy Docker Compose**
+4. **Chạy Docker Compose**
 Tại thư mục chưa file *docker-compose.yml* chạy với lệnh:
 ```sh
 docker-compose up --build -d
 ```
-7. **Sử dụng phương thức predict để dự đoán**
+5. **Sử dụng phương thức predict để dự đoán**
 Mở WSL và gõ lệnh
 ```sh
 curl -X POST -F "file=@/duong_dan_den_file_anh_cua_ban/ten_file_anh.jpg" http://192.168.28.38:8000/predict/
@@ -123,7 +123,7 @@ curl -X POST -F "file=@/mnt/d/download/test.png" http://192.168.28.38:8000/predi
 ```
 
 
-8. **Push image lên Docker Hub**
+6. **Push image lên Docker Hub**
 
 - Đăng nhập vào Docker Hub
 ```sh
@@ -137,6 +137,6 @@ docker tag your_model_api:latest your_dockerhub_username/my-model-api:latest
 ```sh
 docker push your_dockerhub_username/your-model-api:latest
 ```
-## Video demo:
+7. ## Video demo:
 
 [Link Video](https://drive.google.com/file/d/1H-MN06vPVRhEIJXcoFqHuogzYoibgeR7/view?usp=sharing)
