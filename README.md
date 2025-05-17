@@ -66,7 +66,7 @@ Mở Terminal tại thư mục chỉ định.
 2. **Chuẩn bị file:**
 *Clone repository*
 ```sh
-git clone https://github.com/RhzKisSa/cs317-lab2.git
+git clone git@github.com:RhzKisSa/cs317-lab2.git
 ```
 *Download pre-trained model:*
 Download pre-trained model at ([here](https://drive.google.com/file/d/1TWeVaNwtrFZxZWeYka_jda4eQgUXxxXm/view?usp=sharing))
