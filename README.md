@@ -71,49 +71,36 @@ git clone https://github.com/RhzKisSa/cs317-lab2.git
 *Download pre-trained model:*
 Download pre-trained model at ([here](https://drive.google.com/file/d/1TWeVaNwtrFZxZWeYka_jda4eQgUXxxXm/view?usp=sharing))
 Lưu ý model và các file sau khi clone phải ở cùng một thư mục.
-Nén các file ... vào lab2.zip.
-Mở Terminal tại thư mục chứa lab2.zip.
 
-3. **Đưa Dự án lên Server:**
+3. **Build image trên local:**
+- Mở Terminal tại thư mục chứa cs317-lab02 (đã clone)
 ```sh
-scp lab2.zip server_user@server_ip:/home/server_user/your_folder/
+docker build -t yourdockerhubusername/lab02:latest . 
 ```
-- Cài đặt unzip (nếu chưa có):
+- Push image lên Docker Hub:
 ```sh
-sudo apt update
+docker login
+docker push yourdockerhubusername/lab_2_model_api:latest
 ```
+4. **Deploy Docker Compose:**
+- Di chuyển file *docker-compose.yml* lên server:
 ```sh
-sudo apt install unzip -y
+scp docker-compose.yml server_user@server_ip:/home/server_user/your_folder/
 ```
-- Giải nén file lab2.zip:
+- Mở terminal trên server chuyển đến folder chứa file *docker-compose.yml*
 ```sh
-unzip lab2.zip
+cd /home/server_user/your_folder
 ```
-**Đưa các file vào một thư mục để dễ dàng quản lý**
-- Tạo thư mục chứa file
+- Pull Docker image đã push lên Docker Hub:
 ```sh
-mkdir your_folder_name
+docker-compose pull
 ```
-- Di chuyển các file vào thư mục
+- Thực hiện run container:
 ```sh
-mv Dockerfile your_folder_name/
-mv docker-compose.yml your_folder_name/
-mv main.py your_folder_name/
-mv model.pth your_folder_name/
-mv my_model_definition.py your_folder_name/
-mv requirements.txt your_folder_name/
-```  
-- Di chuyển đến thư mục mới
-```sh
-cd your_folder_name
-```
-4. **Chạy Docker Compose:**
-Tại thư mục chưa file *docker-compose.yml* chạy với lệnh:
-```sh
-docker-compose up --build -d
+docker-compose up -d 
 ```
 5. **Sử dụng phương thức predict để dự đoán:**
-Mở WSL và gõ lệnh
+Mở WSL ở local và gõ lệnh
 ```sh
 curl -X POST -F "file=@/duong_dan_den_file_anh_cua_ban/ten_file_anh.jpg" http://192.168.28.38:8000/predict/
 ```
@@ -122,21 +109,6 @@ ví dụ ảnh của tôi được lưu tại đường dẫn *D:/download/test.
 curl -X POST -F "file=@/mnt/d/download/test.png" http://192.168.28.38:8000/predict/
 ```
 
-
-6. **Push image lên Docker Hub:**
-
-- Đăng nhập vào Docker Hub
-```sh
-docker login
-```
-- Tag image (Gắn thẻ cho image):
-```sh
-docker tag your_model_api:latest your_dockerhub_username/my-model-api:latest
-```
-- Push image lên Docker Hub:
-```sh
-docker push your_dockerhub_username/your-model-api:latest
-```
 7. ## Video demo:
 
 [Link Video](https://drive.google.com/file/d/1H-MN06vPVRhEIJXcoFqHuogzYoibgeR7/view?usp=sharing)
