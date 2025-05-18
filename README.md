@@ -80,7 +80,7 @@ docker build -t yourdockerhubusername/lab02:latest service-api
 - Push image lên Docker Hub:
 ```sh
 docker login
-docker push yourdockerhubusername/lab_2_model_api:latest
+docker push yourdockerhubusername/lab02:latest
 ```
 4. **Deploy Docker Compose:**
 - Di chuyển file *docker-compose.yml* lên server:
