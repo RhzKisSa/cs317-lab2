@@ -111,4 +111,4 @@ curl -X POST -F "file=@/mnt/d/download/test.png" http://192.168.28.38:8000/predi
 
 7. ## Video demo:
 
-[Link Video]([https://drive.google.com/file/d/1H-MN06vPVRhEIJXcoFqHuogzYoibgeR7/view?usp=sharing](https://drive.google.com/file/d/1DJ9JjSqxwKapUK1miyIhpDYmi2py5kIC/view))
+[Link Video](https://drive.google.com/file/d/1DJ9JjSqxwKapUK1miyIhpDYmi2py5kIC/view)
