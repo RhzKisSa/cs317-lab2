@@ -97,7 +97,7 @@ docker-compose pull
 ```
 - Thực hiện run container:
 ```sh
-docker-compose up -d 
+docker-compose up -d --build
 ```
 5. **Sử dụng phương thức predict để dự đoán:**
 Mở WSL ở local và gõ lệnh
