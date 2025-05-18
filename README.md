@@ -75,7 +75,7 @@ Lưu ý model và các file sau khi clone phải ở cùng một thư mục.
 3. **Build image trên local:**
 - Mở Terminal tại thư mục chứa cs317-lab02 (đã clone)
 ```sh
-docker build -t yourdockerhubusername/lab02:latest . 
+docker build -t yourdockerhubusername/lab02:latest service-api 
 ```
 - Push image lên Docker Hub:
 ```sh
