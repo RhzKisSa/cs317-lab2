@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: lab_2_model_api:latest 
+    image: khanhnq1301/lab02:latest 
     container_name: lab_2_model_api_container
     ports:
       - "8000:8000" 
